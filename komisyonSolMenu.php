@@ -10,7 +10,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="index.php?sayfa=tasarim-projesi-raporlari"><i class="fa "></i>Danışman Tabanlı</a></li>
-            <li><a href="index.php?sayfa=tasarim-projesi-raporlari"><i class="fa "></i>Proje Tabanlı</a></li>
+            <li><a href="index.php?sayfa=komisyon-proje-tabanli"><i class="fa "></i>Proje Tabanlı</a></li>
           </ul>
         </li>
         <li><a href="index.php?sayfa=proje-islemleri"><i class="fa  fa-comments-o"></i> <span>Danışman Proje Önerisi</span></a></li>

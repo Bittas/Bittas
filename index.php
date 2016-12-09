@@ -15,13 +15,16 @@
   <link rel="stylesheet" href="plugins/jvectormap/jquery-jvectormap-1.2.2.css">
   <link rel="stylesheet" href="plugins/datepicker/datepicker3.css">
   <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
-  <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+  <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">    
+  <link rel="stylesheet"  href=" plugins/datatables/dataTables.bootstrap.css">
+  <script src="js/jquery-3.1.1.min.js"></script>
 
-</head>
+</head >
 <body class="hold-transition skin-blue sidebar-mini">
 <?php
    require_once("include/config.php");
    require_once("include/function.php");
+   require_once("include/functionOgrenciBasvuru.php");
    require_once("header.php");    
    sessionKontrol();
 ?>
@@ -67,12 +70,7 @@
           {
              require_once("komisyonSolMenu.php");
           }
-          $durum ="";
-          if(@$_POST)
-          {
-              $durum =islemler();
-          }
-
+        
       ?>
 
     </section>
@@ -91,13 +89,18 @@
       </ol>
     </section>
 
-    <!-- Main content -->
-    <section class="content">
+
       <!-- Small boxes (Stat box) -->
+      
+	  <section class="content">
+     
       <div class="row">
-	  <h3>aa</h3>
+          <?php			
+            sayfa_getir();
+          ?>
       </div>
-    </section>
+
+      </section>
     <!-- /.content -->
   </div>
 

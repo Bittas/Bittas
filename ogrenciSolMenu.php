@@ -1,31 +1,10 @@
-      <ul class="sidebar-menu">
+
+
+  <ul class="sidebar-menu">
         <li class="header">ÖĞRENCİ  İŞLEMLERİ</li>
-		 <li><a href="index.php?sayfa=danisman"><i class="fa fa-user"></i> <span>Danışman</span></a></li>
-		<li class="treeview">
-          <a href="index.php?sayfa=proje-basvuru">
-            <i class="fa fa-edit"></i> <span>Proje Başvuru</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="index.php?sayfa=proje-onerme"><i class="fa fa-circle-o"></i>Proje Önerme</a></li>
-            <li><a href="index.php?sayfa=bireysel-projeler"><i class="fa fa-circle-o"></i>Bireysel projeler</a></li>
-            <li class="active treeview">
-				<a href="index.php?sayfa=grup-projeler">
-					<i class="fa fa-circle-o"></i> <span>Grup Projeler</span>
-					<span class="pull-right-container">
-						<i class="fa fa-angle-left pull-right"></i>
-					</span>
-			</a>
-				<ul class="treeview-menu">
-					<li><a href="index.php?sayfa=grup-projeler-tek-danismanli"><i class="fa fa-circle"></i>Tek Danışmanlı</a></li>
-					<li class="active"><a href="index.php?sayfa=grup-projeler-cok-danismanli"><i class="fa fa-circle"></i>Çok Danışmanlı</a></li>
-				</ul>
-			</li>
-          </ul>
-        </li>
-		<li class="treeview">
+          
+        <!--    TASARIM PROJESİ -->
+		<li class="treeview"  >
 		  <a href="index.php?sayfa=proje-basvuru">
             <i class="fa fa-text-height"></i><span>Tasarım Projesi</span>
             <span class="pull-right-container">
@@ -33,20 +12,64 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="index.php?sayfa=tasarim-projesi-rapor-islemleri"><i class="fa  fa-files-o"></i> Rapor İşlemleri</a></li>
+              <li><a href="index.php?sayfa=proje-danisman"><i class="fa fa-user"></i> <span>Danışman</span></a></li>
+       <?php 
+            if(ogrenciProjeAlmismi($ogrId,1)!=1) 
+        echo'<li class="treeview  active">
+              <a href="#">
+                <i class="fa fa-edit"></i> <span>Proje Başvuru</span>
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="index.php?sayfa=ogrenci-proje-onerme"><i class="fa fa-circle-o"></i>Proje Önerme</a></li>
+                <li><a href="index.php?sayfa=bireysel-projeler"><i class="fa fa-circle-o"></i>Bireysel projeler</a></li>
+                <li class="active treeview">
+                    <a href="index.php?sayfa=grup-projeler">
+                        <i class="fa fa-circle-o"></i> Grup Projeler   </a>    </li>
+                <li><a href="index.php?sayfa=basvurulan-projeleri"><i class="fa fa-circle-o"></i>Başvurulan Projeleri Listele</a></li>
+              </ul>
+            </li>';
+              ?>
+            <li><a href="index.php?sayfa=rapor-islemleri"><i class="fa  fa-files-o"></i> Rapor İşlemleri</a></li>
           </ul>
         </li>
-		<li class="treeview">
-		   <a href="index.php?sayfa=proje-basvuru">
-             <i class="fa fa-btc"></i><span>Bitirme Projesi</span>
+     
+        <!--    BİTİRME PROJESİ -->
+		<li class="treeview"  >
+		  <a href="index.php?sayfa=proje-basvuru">
+            <i class="fa fa-btc" id="bitirme-proje-basvuru"></i><span>Bitirme Projesi</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="index.php?sayfa=bitirme-projesi-rapor-islemleri"><i class="fa  fa-files-o"></i> Rapor İşlemleri</a></li>
+              <li><a href="index.php?sayfa=proje-danisman"><i class="fa fa-user"></i> <span>Danışman</span></a></li>
+          <?php 
+          if(ogrenciProjeAlmismi($ogrId,2)!=1 && ogrenciProjeAlmismi($ogrId,3)!=1 )
+         echo'<li class="treeview  active">
+              <a href="#">
+                <i class="fa fa-edit"></i> <span>Proje Başvuru</span>
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="index.php?sayfa=ogrenci-proje-onerme"><i class="fa fa-circle-o"></i>Proje Önerme</a></li>
+                <li><a href="index.php?sayfa=bireysel-projeler"><i class="fa fa-circle-o"></i>Bireysel projeler</a></li>
+                <li class="active treeview">
+                    <a href="index.php?sayfa=grup-projeler">
+                        <i class="fa fa-circle-o"></i> Grup Projeler   </a>    </li>
+                <li><a href="index.php?sayfa=basvurulan-projeleri"><i class="fa fa-circle-o"></i>Başvurulan Projeleri Listele</a></li>
+              </ul>
+            </li>';
+              ?>
+            <li><a href="index.php?sayfa=rapor-islemleri"><i class="fa  fa-files-o"></i> Rapor İşlemleri</a></li>
           </ul>
         </li>
+        
+          
 		 <li>
           <a href="index.php?sayfa=mesajlar">
             <i class="fa fa-envelope"></i> <span>Mesajlar</span>

@@ -14,6 +14,29 @@
 
     <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
+          <?php
+             $kullaniciId=$_SESSION['staj']['id'];
+            $id=ogrenciId($kullaniciId);
+            //Tasarım projesi almış ise
+            if(ogrenciProjeAlmismi($id,1)==1)
+          echo'
+                <li class="dropdown label-menu">
+                 <a href="index.php?sayfa=tasarim-projesi">
+                  <i class="fa fa-text-height"></i>
+                  <span class="label label-danger">1</span>
+                </a>
+          </li>
+            ';//Bitirm projesi almış ise
+             if(ogrenciProjeAlmismi($id,2)==1 || (ogrenciProjeAlmismi($id,3)==1))
+          echo'
+                <li class="dropdown label-menu">
+                 <a href="index.php?sayfa=bitirme-projesi">
+                  <i class="fa fa-btc"></i>
+                  <span class="label label-danger">1</span>
+                </a>
+          </li>
+            ';
+          ?>
           <li class="dropdown tasks-menu">
             <a href="index.php?sayfa=mesajlar">
               <i class="fa fa-envelope"></i>

@@ -26,7 +26,8 @@
 <script src="plugins/fastclick/fastclick.js"></script>
 <script src="dist/js/app.min.js"></script>
 <script src="dist/js/demo.js"></script>
-
+<script src="js/ogrenciBasvuru.js"></script>
+<script src="js/komisyonProjeTabanli.js"></script>
 </body>
 </html>
 <?php ob_end_flush();?>

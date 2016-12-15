@@ -37,7 +37,7 @@
 
               <h1 class="box-title text-primary">
                 <?php
-                 echo tabloBaslik() ;
+                 echo tabloBaslik();
                 ?>
                 </h1>
                  

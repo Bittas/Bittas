@@ -1,5 +1,5 @@
 <?php ob_start(); ?>
-<html>
+<html lang="en" class="no-js">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,9 +17,14 @@
   <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
   <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">    
   <link rel="stylesheet"  href=" plugins/datatables/dataTables.bootstrap.css">
+  <script src="js/danismanonay.js"></script>  
+  <script src="js/danismanbasvurulari.js"></script>
   <script src="js/jquery-3.1.1.min.js"></script>
+  <link rel="stylesheet" href="css/uploadfilecss/component.css" />
 
-</head >
+  <script>(function(e,t,n){var r=e.querySelectorAll("html")[0];r.className=r.className.replace(/(^|\s)no-js(\s|$)/,"$1js$2")})(document,window,0);</script>
+</head>
+
 <body class="hold-transition skin-blue sidebar-mini">
 <?php
    require_once("include/config.php");
@@ -78,16 +83,6 @@
   </aside>
 
   <div class="content-wrapper">
-    <section class="content-header">
-      <h1>
-        İşlemler başlık
-        <small>Control panel</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
-      </ol>
-    </section>
 
 
       <!-- Small boxes (Stat box) -->

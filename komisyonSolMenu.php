@@ -1,6 +1,6 @@
       <ul class="sidebar-menu">
         <li class="header">KOMİSYON  İŞLEMLERİ</li>
-		 <li><a href="index.php?sayfa=proje-islemleri"><i class="fa fa-user"></i> <span>Danışman</span></a></li>
+		 <li><a href="index.php?sayfa=danisman-islemleri"><i class="fa fa-user"></i> <span>Danışman</span></a></li>
 		<li class="treeview">
 		  <a href="#">
             <i class="fa fa-pencil-square-o"></i><span>Öğrenci Başvuru Şekli</span>
@@ -9,11 +9,23 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="index.php?sayfa=tasarim-projesi-raporlari"><i class="fa "></i>Danışman Tabanlı</a></li>
+            <li><a href="index.php?sayfa=ogrenci-danisman-basvurusu"><i class="fa "></i>Danışman Tabanlı</a></li>
             <li><a href="index.php?sayfa=komisyon-proje-tabanli"><i class="fa "></i>Proje Tabanlı</a></li>
           </ul>
         </li>
-        <li><a href="index.php?sayfa=proje-islemleri"><i class="fa  fa-comments-o"></i> <span>Danışman Proje Önerisi</span></a></li>
+    <li class="treeview">
+      <a href="#">
+            <i class="fa fa-pencil-square-o"></i><span>Proje Önerileri</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="index.php?sayfa=komisyon-proje-onerileri&rol=2"><i class="fa "></i>Danışman Proje Önerisi</a></li>
+            <li><a href="index.php?sayfa=komisyon-proje-onerileri&rol=1"><i class="fa "></i>Öğrenci Proje Önerisi</a></li>
+          </ul>
+        </li>
+
         <li class="treeview">
           <a href="index.php?sayfa=proje-basvuru">
             <i class="fa fa-text-height"></i> <span>Tasarım Projesi</span>

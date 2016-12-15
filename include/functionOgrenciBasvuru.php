@@ -104,7 +104,7 @@ function ogrenciProjeBasvuruListeleHepsi($isaret)
                 INNER JOIN
                   tbl_projedurum AS PD ON P.projedurum_id = PD.id
                 WHERE
-                  P.projedurum_id = 1  AND P.kisi_sayisi ".$isaret." 1  AND P.turu = ".$projeTuru."  
+                  P.projedurum_id = 1  AND P.kisi_sayisi ".$isaret." 1 AND P.turu = ".$projeTuru."  
                 ";
   
 		$sonuc =mysqli_query($conn,$query);

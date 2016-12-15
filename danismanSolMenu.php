@@ -1,6 +1,21 @@
+                  <?php
+    $id=$_SESSION['staj']['id'];
+    $diziMesajlarSayisi=gelenGidenMesajSayisi($id);
+      ?>
       <ul class="sidebar-menu">
         <li class="header">DANIŞMAN  İŞLEMLERİ</li>
-		 <li><a href="index.php?sayfa=proje-islemleri"><i class="fa fa-user"></i> <span>Proje İşlemleri</span></a></li>
+        <li class="treeview">
+      <a href="#">
+            <i class="fa fa-files-o"></i><span>Proje İşlemleri</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="index.php?sayfa=proje-oner"><i class="fa  fa-text-height"></i>Proje Öner</a></li>
+            <li><a href="index.php?sayfa=proje-onerilen"><i class="fa  fa-btc"></i>Önerilen Projeler</a></li>
+          </ul>
+        </li>
 		<li class="treeview">
           <a href="#">
             <i class="fa fa-edit"></i> <span>Danışman </span>
@@ -54,15 +69,20 @@
           <a href="index.php?sayfa=mesajlar">
             <i class="fa fa-envelope"></i> <span>Mesajlar</span>
             <span class="pull-right-container">
-              <small class="label pull-right bg-yellow">12</small>
-              <small class="label pull-right bg-green">16</small>
-              <small class="label pull-right bg-red">5</small>
+              <small class="label pull-right bg-yellow"><?php echo $diziMesajlarSayisi['giden'][0]; ?></small>
+              <small class="label pull-right bg-blue"><?php echo $diziMesajlarSayisi['gelen'][0]; ?></small>
             </span>
           </a>
         </li>
        <li>
           <a href="index.php?sayfa=mesajlar">
             <i class="fa fa-newspaper-o"></i> <span>Profil</span>
+            <span class="pull-right-container"></span>
+          </a>
+        </li>
+       <li>
+          <a href="index.php?sayfa=deneme">
+            <i class="fa fa-newspaper-o"></i> <span>deneme</span>
             <span class="pull-right-container"></span>
           </a>
         </li>

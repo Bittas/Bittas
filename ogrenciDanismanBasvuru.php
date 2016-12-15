@@ -28,7 +28,7 @@
             <div class="box-body">
               <table id="databaseTablo" class="table table-bordered table-striped">
                 <thead>
-                <tr>
+                <tr><th>Sıra</th>
                   <th>Adı</th>
                   <th>Soyadı</th>
                   <th>İşlem</th>
@@ -44,7 +44,14 @@
 				   {
                        ogrencidanismanBasvurutumDanismanlar($_POST['dadi'],$_POST['dasoyadi']);
                       // echo '<script> $(".container").remove(); </script>';
-                    }
+                   }else if(@$_POST["listele"] && $_POST['dadi']!="" && $_POST['dasoyadi']=="" )
+				   {
+                       ogrencidanismanBasvurutumDanismanlar1($_POST['dadi']);
+                   }
+				   else if(@$_POST["listele"] && $_POST['dasoyadi']!="" && $_POST['dadi']=="" )
+				   {
+                       ogrencidanismanBasvurutumDanismanlar2($_POST['dasoyadi']);
+                   }
 					?>
                    <span id="listeleme"></span>
               </table>

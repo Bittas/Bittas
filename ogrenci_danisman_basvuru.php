@@ -13,17 +13,17 @@
       <input type="text" class="form-control" name="soyadi" placeholder="Soyadı">
     </div>
 	<div class="form-group">
-        <label class="control-label" for="projeTuru">Proje Türü:</label>         
+        <label class="control-label" for="projeTuru">Proje Durumu:</label>         
        <select name="proje_durum" class="form-control" >
 	<option value="3" disabled selected>Durum Seçiniz</option>
 	<option value="2">Hepsi</option>
-	<option value="1">Onaylanmış</option>
-	<option value="0">Onaylanmamış</option>
+	<option value="1">Aktif</option>
+	<option value="0">Pasif</option>
 	</select>
     </div> 
 	 <input type="submit" class="btn  btn-success" name="gonder" value="Listele"/>
 	</form>
-	<div>
+	</div>
 	<style style="text/css">
     .hoverTable tr:hover {
         background-color: #3c8dbc;
@@ -58,11 +58,24 @@
 		{
 		$sonuc = ogrenci_proje_durumu($numarasi,$adi,$soyadi,$proje_durum);
 		}
-		else if($numarasi =="" and $adi =="" and $soyadi =="" and $proje_durum =="" and $proje_durum =="")
+		else if($numarasi =="" and $adi =="" and $soyadi =="" and $proje_durum =="" )
 		{		
 		$sonuc = ogrenci_proje_getir();
 		//echo "2";
-		}else
+		}
+		 else if($proje_durum !="3" and  $proje_durum !="2" and$numarasi =="" and $adi =="" and $soyadi =="")
+		{
+		$sonuc = ogrenci_proje_durumudurum($proje_durum);
+		}
+		 else if($numarasi !="" and $adi =="" and $soyadi =="")
+		{
+		$sonuc = ogrenci_proje_durumunumara($numarasi);
+		}
+		else if($proje_durum =="2" and $numarasi =="" and $adi =="" and $soyadi =="")
+		{
+		$sonuc = ogrenci_proje_getir();
+		}
+		else
 		{
 			return errorMesaj("Lütfen bilgilerinizi kontrol ediniz..");	
 		}	

@@ -11,7 +11,6 @@
 		$foto = $row['foto'];
 	}
  ?>
-<span id="sonuc"></span>
  
 <input type="text" class="hidden page" name="<?php echo sayfa(); ?>" />
 
@@ -93,3 +92,8 @@ where OP.proje_id='$proje_id' and OP.ogrenci_id='$ogrid' and OD.projedurum_id='1
 		</td></tr>";
 		}}}
     ?>
+	             <span id="listeleme"></span>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>

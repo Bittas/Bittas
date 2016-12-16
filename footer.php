@@ -28,6 +28,7 @@
 <script src="dist/js/demo.js"></script>
 <script src="js/ogrenciBasvuru.js"></script>
 <script src="js/komisyonProjeTabanli.js"></script>
+<script src="js/projeSonlandir.js"></script>
 </body>
 </html>
 <?php ob_end_flush();?>

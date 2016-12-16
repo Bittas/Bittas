@@ -6,6 +6,7 @@ require_once("include/functionOnerilenProjeler.php");
 require_once("include/functionProjeOner.php");
 require_once("include/functionOgrenciProfilGuncelle.php");
 require_once("include/functionRaporIslemleri.php");
+require_once("include/functionListeler.php");
 	session_start();
     
     $userId=@$_SESSION['staj']['id'];
@@ -92,7 +93,9 @@ require_once("include/functionRaporIslemleri.php");
 		}else if ($sayfa == "danisman-onaylama"){
 			require_once("danisman_onayla.php");
 		}/////////////////////////////////////////////////////////////////////
-    
+        else if ($sayfa == "listele"){
+			require_once("komisyonListele.php");
+		}
 
 	}
 	function errorMesaj($txt)

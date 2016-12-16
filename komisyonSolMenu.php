@@ -35,17 +35,17 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="index.php?sayfa=proje-onerme"><i class="fa  fa-arrows-h"></i>Eşlemeler</a></li>
-            <li><a href="index.php?sayfa=bireysel-projeler"><i class="fa  fa-line-chart"></i>Proje Takip</a></li>
+            <!--<li><a href="index.php?sayfa=bireysel-projeler"><i class="fa  fa-line-chart"></i>Proje Takip</a></li> -->
             <li class="active treeview">
 				<a href="index.php?sayfa=grup-projeler">
-					<i class="fa fa-list-ul"></i> <span>Listeler</span>
+					<i class="fa fa-list-ul"></i> <span>Listeleme ve Bitirme</span>
 					<span class="pull-right-container">
 						<i class="fa fa-angle-left pull-right"></i>
 					</span>
 			</a>
 				<ul class="treeview-menu">
-					<li><a href="index.php?sayfa=grup-projeler-tek-danismanli"><i class="fa fa-group"></i>Grup</a></li>
-					<li class="active"><a href="index.php?sayfa=grup-projeler-cok-danismanli"><i class="fa fa-user"></i>Bireysel</a></li>
+					<li><a href="index.php?sayfa=listele&tur=1&kisi=grup"><i class="fa fa-group"></i>Grup</a></li>
+					<li class="active"><a href="index.php?sayfa=listele&tur=1&kisi=bireysel"><i class="fa fa-user"></i>Bireysel</a></li>
 				</ul>
 			</li>
           </ul>
@@ -60,17 +60,17 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="index.php?sayfa=proje-onerme"><i class="fa fa-arrows-h"></i>Eşlemeler</a></li>
-            <li><a href="index.php?sayfa=bireysel-projeler"><i class="fa  fa-line-chart"></i>Proje Takip</a></li>
+           <!-- <li><a href="index.php?sayfa=bireysel-projeler"><i class="fa  fa-line-chart"></i>Proje Takip</a></li> -->
             <li class="active treeview">
 				<a href="index.php?sayfa=grup-projeler">
-					<i class="fa fa-list-ul"></i> <span>Listeler</span>
+					<i class="fa fa-list-ul"></i> <span>Listeleme ve Bitirme</span>
 					<span class="pull-right-container">
 						<i class="fa fa-angle-left pull-right"></i>
 					</span>
 			</a>
 				<ul class="treeview-menu">
-					<li><a href="index.php?sayfa=grup-projeler-tek-danismanli"><i class="fa fa-group"></i>Grup</a></li>
-					<li class="active"><a href="index.php?sayfa=grup-projeler-cok-danismanli"><i class="fa fa-user"></i>Bireysel</a></li>
+					<li><a href="index.php?sayfa=listele&tur=2&kisi=grup"><i class="fa fa-group"></i>Grup</a></li>
+					<li class="active"><a href="index.php?sayfa=listele&tur=2&kisi=bireysel"><i class="fa fa-user"></i>Bireysel</a></li>
 				</ul>
 			</li>
           </ul>

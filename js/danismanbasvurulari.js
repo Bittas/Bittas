@@ -3,11 +3,10 @@ function  danismanbasvuru(element){
 var check_active = $(element).is(':checked') ? 1 : 0;
 var OD_id = $(element).attr('name');
 var page = $(".page").attr('name');
-var ogrId=$(element).attr('value');
     $.ajax({
         type: "POST",
         url: "ajaxDanismanbasvurulariekle.php",
-        data: {OD_id: OD_id, ogrId: ogrId,active:check_active,page:page},
+        data: {OD_id: OD_id, active:check_active, page:page},
         success: function(cevap){
             $("#sonuc").html(cevap);
             setTimeout(function() {
@@ -27,9 +26,9 @@ return true;
 	
 function  listeleme(element)
 {
-$("table").remove("#example1");
+$("table").remove("#databaseTablo");
 var page = $(".page").attr('name');
-var selected_durum = $("#projeler").val();
+var selected_durum = $("#databaseTablo2").val();
     
     $.ajax({
         type: "POST",

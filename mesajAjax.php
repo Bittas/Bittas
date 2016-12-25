@@ -10,8 +10,11 @@
 			{	
 				//echo "<a class='aliciarama_link' href='index.php?sayfa=mesajlar&aliciID=".$sutun["id"]."'>
 				//<div class='aliciarama_icerik' id=".$sutun["id"].">".$sutun["adi"]."   ".$sutun["soyadi"]." </div></a><br>";
-				
-				echo "<div class='aliciarama_icerik' id='".$sutun["id"]."'>".$sutun["adi"]." ".$sutun["soyadi"]." </div><br>";
+				echo "<div>";
+				echo "<div class='aliciarama_icerik col-xs-12 form-control my_autocomplete' id='".$sutun["id"]."' style='
+    top: 100%;
+    z-index: 1000;'>".$sutun["adi"]." ".$sutun["soyadi"]." </div>";
+				echo "</div>";
 			}
 		 }
 		 else

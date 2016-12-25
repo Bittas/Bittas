@@ -15,20 +15,14 @@ if (@$_POST["projeOner"]) {
             <div class="box-body">
                 <div class="form-group">
                   <label>Proje Adı</label>
-                  <input name="projeAdi" type="text" class="form-control" placeholder="Enter ...">
+                  <input name="projeAdi" type="text" class="form-control" placeholder="proje adını giriniz...">
                 </div>
 
                 <div class="form-group">
                   <label>Proje Açıklama</label>
-                  <textarea name="projeAciklama" class="form-control" rows="3" placeholder="Enter ..."></textarea>
+                  <textarea name="projeAciklama" class="form-control" rows="3" placeholder="proje açıklamasını giriniz..."></textarea>
                 </div>
 
-                <div class="form-group">
-                  <label>File input</label>
-                  <input name="projeDosya" type="file">
-
-                  <p class="help-block">Example block-level help text here.</p>
-                </div>
                 <div class="form-group">
                   <label>Proje Türü</label>
                   <select name="projeTuru" class="form-control">
@@ -58,7 +52,7 @@ if (@$_POST["projeOner"]) {
                   </div>
 					<div id="grupRadioDiv" >
                   <label for="grupSayisi">Grup sayısı</label>
-                  <input name="grupSayisi" type="text" class="form-control" placeholder="Enter ...">
+                  <input name="grupSayisi" type="text" class="form-control" placeholder="kişi sayısını giriniz...">
                   <div class="radio">
                     <label>
                       <input type="radio" name="optionsRadios" id="optionsRadios3" value="option1" checked>
@@ -74,7 +68,7 @@ if (@$_POST["projeOner"]) {
 					</div>
 				<div id="danısmanRadioDiv" class="form-group" >
                   <label for="danismanSayisi">Danışman sayısı</label>
-                  <input name="danismanSayisi" type="text" class="form-control" placeholder="Enter ...">
+                  <input name="danismanSayisi" type="text" class="form-control" placeholder="danışman sayısını giriniz...">
 				</div>
                 </div>
 			  <div class="box-footer">

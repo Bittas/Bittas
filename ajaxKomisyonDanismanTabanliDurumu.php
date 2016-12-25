@@ -13,19 +13,24 @@ function ogrdanismanbasvurusu()
     $danismanid = $_POST['danismanid'];
     $durum = $_POST['durum'];
     $onay = $_POST['onay'];
-	$numara =$_POST['numara'];
+	$proje_id =$_POST['numara'];
 	$ogr_id = $_POST['ogrid'];
 	$projedurum_id = "1";
+/*	echo $ogr_id;
+	echo $danismanid;
+	echo $proje_id;*/
+	
+	
 		if($durum == 1)
 		{
-		if(onay_siniri($numara) > onaylanmisdanismansayisi($ogr_id,$danismanid) )
+		if(onay_siniri($ogr_id) > onaylanmisdanismansayisi($ogr_id,$danismanid,$proje_id) )
 		{
 			$query22="UPDATE tbl_ogrenci_danisman as OD SET `onay` = '$durum' 
-		WHERE OD.danisma_id ='$danismanid' and OD.ogr_id='$ogr_id' and OD.projedurum_id='$projedurum_id'";
+		WHERE OD.danisma_id ='$danismanid' and OD.ogr_id='$ogr_id' and OD.proje_id='$proje_id'";
 		
 		if(@mysqli_query($conn,$query22))
 		{
-		$toplamonay=onaylanmisdanismansayisi($ogr_id,$danismanid);	
+		$toplamonay=onaylanmisdanismansayisi($ogr_id,$danismanid,$proje_id);	
 		return successMesaj("".$toplamonay." adet danışman başvurusu onaylandı.");
 		}else{
 		return errorMesaj("işlem başarısız..");
@@ -33,19 +38,19 @@ function ogrdanismanbasvurusu()
 		
 		}else
 		{
-			return warningMesaj("Maksimum danışman sayısına ulaşıldı.".onay_siniri($numara)."");
+			return warningMesaj("Maksimum danışman sayısına ulaşıldı.".onay_siniri($ogr_id)."");
 		}
 		
 		}else if($durum==0)
 		{
 		$query22="UPDATE tbl_ogrenci_danisman as OD SET `onay` = '$durum' 
 		WHERE OD.danisma_id ='$danismanid' and OD.ogr_id='$ogr_id' 
-		and OD.projedurum_id='$projedurum_id'";
+		and OD.proje_id='$proje_id'";
 		
 		
 		if(@mysqli_query($conn,$query22))
 		{
-		$toplamonay=onaylanmisdanismansayisi($ogr_id,$danismanid);	
+		$toplamonay=onaylanmisdanismansayisi($ogr_id,$danismanid,$proje_id);	
 		return successMesaj("danışman başvurusu iptal edildi, ".$toplamonay." adet kaldı.");
 		}else{
 		return errorMesaj("işlem başarısız..");
@@ -57,12 +62,12 @@ function ogrdanismanbasvurusu()
 	
 	
 	
-function onay_siniri($numara)
+function onay_siniri($ogr_id)
 {
 	$query1="select P.danisman_sayisi as sayi from tbl_ogrenci as O 
 	inner join tbl_ogrenci_proje as OP on OP.ogrenci_id = O.id 
 	inner join tbl_proje as P on P.id = OP.proje_id
-	where numara='$numara' and P.projedurum_id='1' and OP.onay='1'";
+	where O.id='$ogr_id' and P.projedurum_id='1' and OP.onay='1'";
 	
 	global $conn;
 	$sonuc=mysqli_query($conn,$query1);
@@ -73,7 +78,7 @@ function onay_siniri($numara)
 }
 
 
-function onaylanmisdanismansayisi($ogr_id,$danismanid)
+function onaylanmisdanismansayisi($ogr_id,$danismanid,$proje_id)
 {	
 	/*$query11="select count(*) as sayi from tbl_ogrenci as O 
 	inner join tbl_ogrenci_danisman as OD on O.id = OD.ogr_id 
@@ -81,7 +86,7 @@ function onaylanmisdanismansayisi($ogr_id,$danismanid)
 	inner join tbl_proje as P on P.id = OP.proje_id 
 	where numara='$numara' and OD.onay='1' and P.projedurum_id='1'";*/
 	$query11="select count(*) as sayi from tbl_ogrenci_danisman 
-	where ogr_id='$ogr_id' and onay='1' and projedurum_id='1'";
+	where ogr_id='$ogr_id' and onay='1' and proje_id='$proje_id'";
 	global $conn;
 	@$sonuc=mysqli_query($conn,$query11);
 	if(@$satir=mysqli_fetch_array($sonuc))

@@ -8,19 +8,21 @@
 		$adi =@$_POST["adi"];
 		$soyadi =@$_POST["soyadi"];
 		$foto ="profil/".$_POST['file-2']."";
-		$hakkimda =@$_POST["hakkinda"];
+		$hakkimda =@$_POST["hakkimda"];
+		$uni=@$_POST["uni"];
+		$unvan=@$_POST["unvan"];
+		$tc=@$_POST["tc"];
 		
-		$sonuc=danisman_ekle($email,$parola,$adi,$soyadi,$foto,$hakkimda,$rol);
+		if ($email !="" and $parola !="" and $adi !="" and $soyadi !="" and $foto !="" and 
+		$hakkimda !="" and $uni !="" and $unvan !="" and $tc !="" )
+		{
+		$sonuc=danisman_ekle($email,$parola,$adi,$soyadi,$foto,$hakkimda,$rol,$uni,$unvan,$tc);
 		echo $sonuc;
+		}else
+		echo errorMesaj("Lütfen boşlukları doldurunuz");
 					
 	}
 ?>
-<script>
-label {
-  display: inline-block;
-  width: 140px;
-  text-align: right;
-}​
 </script>
 		<h2> Danışman Ekle</h2>
 	<form class="form-inline" action="" method="post"><br/>
@@ -48,6 +50,34 @@ label {
 		<input type="password" class="form-control" name="parola" placeholder="parola" size="35" required/>
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
 		</div></div><br/></td></tr>
+		
+	<tr><td><br/><div class="form-group">
+      <label for="tc">Tc Kimlik No:</label></td><td><br/>
+      <input type="text" class="form-control" name="tc" placeholder="kimlik numarası" size="40">
+    </div><br/></td></tr>		
+
+	<tr><td><br/><div class="form-group ">
+<label for="uni">Üniversite Seç:</label></td><td><br/>
+      <div class="form-group ">	
+		<select name="uni" class="form-control">
+  <option value="" disabled selected>Üniversite Seçiniz</option>
+  <option value="1">Karadeniz Teknik Üniversitesi</option>
+  <option value="2">Sakarya Üniversitesi</option>
+</select>
+</div></div><br/></td></tr>			
+	
+	<tr><td><br/>
+	<div class="form-group ">
+      <label for="unvan">Ünvan:</label></td><td><br/>
+      <div class="form-group ">	
+		<select name="unvan" class="form-control">
+  <option value="" disabled selected>Ünvan seçiniz</option>
+  <option value="Öğretim Görevlisi">Öğretim Görevlisi</option>
+  <option value="Yardımcı Doçent Doktor">Yardımcı Doçent Doktor</option>
+  <option value="Doçent Doktor">Doçent Doktor</option>
+  <option value="Araştırma Görevlisi">Araştırma Görevlisi</option>
+</select>
+</div></div><br/></td></tr>	
 	
 	<tr><td><br/><div class="form-group has-feedback">
     <label for="file-2">Fotoğraf:</label></td><td><br/>

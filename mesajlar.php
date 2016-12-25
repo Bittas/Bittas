@@ -5,24 +5,23 @@
 	
 	if(@$_POST){
 		if(@$_POST["m"]=="gitti"){
-			//Mesaj g?nderme i?lemini burada yap?yorum
+			if ($_POST["aliciIDgiden"]) {
 			$alici=$_POST["aliciIDgiden"];
 			$konu=$_POST["konu"];
 			$alicininMesaj=$_POST["alicininMesaj"];
 			$tarih=Date("j-n-o");
 			global $conn;
-			//$sorgu = "INSERT INTO `tbl_mesaj`(`gonderen_id`, `alici_id`, `konu`, `mesaj`, `tarih`) 
-			//		VALUES ('".$_SESSION['staj']->getID()."' , '".$alici."' , '".$konu."' , '".$alicininMesaj."' , '11-11-2016')";
-		//$query="insert into tbl_kullanici(mail,parola,rol,onay,foto) value('$email','$sifre','1','0','profil/user.png')";
-			//INSERT INTO `tbl_mesaj`(`gonderen_id`, `alici_id`, `konu`, `mesaj`, `durum`, `tarih`) VALUES ('$id','$alici','$konu','$alicininMesaj','0','$tarih')
 			$sorgu="insert into tbl_mesaj(gonderen_id,alici_id,konu,mesaj,durum,tarih) value('$id','$alici','$konu','$alicininMesaj','0','$tarih')";
 			if (@mysqli_query($conn,$sorgu)) {
-				echo "mesaj gönderildi";
+				echo successMesaj("mesaj gönderildi");
 			}
 			else{
-				echo "mesaj gönderilemedi!!";
+				echo errorMesaj("mesaj gönderilemedi");
 			}
 
+			}
+			else
+				echo errorMesaj("Alıcı girmediniz, tekrar deneyin");
 		}
 		else{
 			//Mesaj silme i?lemini burada yap?yorum
@@ -286,9 +285,9 @@
 				<div class="box-body">
 				  <div class="form-group">
 						<div id="aliciaramabolumu">
-							<input type="text" id="alici" name="alici" placeholder="Alıcı Adı:" class="form-control">
+							<input type="text" id="alici" name="alici" placeholder="Alıcı Adı:" class="form-control" autocomplete="off">
 							<div class="alicikarama_sonuc" style="position:absolute;">
-								<div class="aliciarama_sonuc"  style="cursor:pointer">
+								<div class="aliciarama_sonuc" style="cursor:pointer; background-color: black;">
 								<span>Sonuc</span>
 								</div>
 							</div>

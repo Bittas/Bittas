@@ -1,21 +1,17 @@
-
-
-<?php
-if(isset($_FILES['file-2'])){
-  echo raporYukle($_FILES['file-2']);
-}
-?>
-
-
     <!-- Main content -->
     <section class="content">
-    <?php echo raporYukleyebilirMi() ?>
+      <div class="col-md-12">
         <!-- The time line -->
         <ul class="timeline">
           <!-- timeline time label -->
-          <?php raporGetirKisiyeGore(); ?>
+          <?php
+          if (isset($_GET["projeID"])&&isset($_GET["ogrenciID"])) {
+          danismanRaporProjeGetir($_GET["projeID"],$_GET["ogrenciID"]);
+          }
+          ?>
           <!-- END timeline item -->
         </ul>
+      </div>
       <!-- /.col -->
     </section>
     <!-- /.content -->

@@ -48,8 +48,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="index.php?sayfa=tasarim-projesi-raporlari"><i class="fa  fa-text-height"></i>Tasarım Projesi</a></li>
-            <li><a href="index.php?sayfa=tasarim-projesi-raporlari"><i class="fa  fa-btc"></i>Bitirme Projesi</a></li>
+            <li><a href="index.php?sayfa=danisman-raporlar&tur=tasarim"><i class="fa  fa-text-height"></i>Tasarım Projesi</a></li>
+            <li><a href="index.php?sayfa=danisman-raporlar&tur=bitirme"><i class="fa  fa-btc"></i>Bitirme Projesi</a></li>
           </ul>
         </li>
          <li class="treeview">
@@ -61,8 +61,8 @@
              </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="index.php?sayfa=grup"><i class="fa  fa-group"></i>Grup</a></li>
-            <li><a href="index.php?sayfa=bireysel"><i class="fa   fa-user"></i>Bireysel</a></li>
+            <li><a href="index.php?sayfa=danismana-ogrenci-proje-listele&kisi=grup"><i class="fa  fa-group"></i>Grup</a></li>
+            <li><a href="index.php?sayfa=danismana-ogrenci-proje-listele&kisi=bireysel"><i class="fa   fa-user"></i>Bireysel</a></li>
           </ul>
         </li>
 		 <li>
@@ -75,14 +75,14 @@
           </a>
         </li>
        <li>
-          <a href="index.php?sayfa=mesajlar">
+          <a href="index.php?sayfa=danisman-profil-duzenle">
             <i class="fa fa-newspaper-o"></i> <span>Profil</span>
             <span class="pull-right-container"></span>
           </a>
         </li>
        <li>
-          <a href="index.php?sayfa=deneme">
-            <i class="fa fa-newspaper-o"></i> <span>deneme</span>
+          <a href="index.php?sayfa=ogrenci-kayit-onay">
+            <i class="fa fa-newspaper-o"></i> <span>Öğrenci Kayıt Onayı</span>
             <span class="pull-right-container"></span>
           </a>
         </li>

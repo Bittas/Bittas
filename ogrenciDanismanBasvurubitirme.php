@@ -36,22 +36,28 @@
                 </thead>
                 <tbody>
                     <?php
-						$sayfa=sayfa();					
+						$sayfa=sayfa();	
+				$turu =ogrenci_proje_bilgisi();		
+				if($turu == 2 or $turu == 3 )
+				{					
                     if(@$_POST["listele"] && $_POST['dadi']=="" && $_POST['dasoyadi']==""){
-						ogrencidanismanBasvuru();
+						ogrencidanismanBasvuru($turu);
                     }
                    else if(@$_POST["listele"] && $_POST['dadi']!="" && $_POST['dasoyadi']!="")
 				   {
-                       ogrencidanismanBasvurutumDanismanlar($_POST['dadi'],$_POST['dasoyadi']);
-
+                       ogrencidanismanBasvurutumDanismanlar($_POST['dadi'],$_POST['dasoyadi'],$turu);
+                      // echo '<script> $(".container").remove(); </script>';
                    }else if(@$_POST["listele"] && $_POST['dadi']!="" && $_POST['dasoyadi']=="" )
 				   {
-                       ogrencidanismanBasvurutumDanismanlar1($_POST['dadi']);
+                       ogrencidanismanBasvurutumDanismanlar1($_POST['dadi'],$turu);
                    }
 				   else if(@$_POST["listele"] && $_POST['dasoyadi']!="" && $_POST['dadi']=="" )
 				   {
-                       ogrencidanismanBasvurutumDanismanlar2($_POST['dasoyadi']);
+                       ogrencidanismanBasvurutumDanismanlar2($_POST['dasoyadi'],$turu);
                    }
+				}else
+					echo errorMesaj("Danışman başvurusu için aktif bitirme projeniz olması gerekir.  
+				Lütfen önce bitirme projesi başvurusu yapınız...");
 					?>
                    <span id="listeleme"></span>
               </table>

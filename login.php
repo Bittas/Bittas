@@ -23,7 +23,7 @@
 <html >
 <head>
   <meta charset="UTF-8">
-  <title>BitTas Login & Sign Up </title>
+  <title>BitTas Giriş & Kayıt </title>
   <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">  
   <link rel="stylesheet" href="css/login.css">  
@@ -34,17 +34,17 @@
 <div class="panel">
   <ul id="menu" class="panel__menu">
     <hr/>
-    <li id="signIn"> <a href="#">Login</a></li>
-    <li id="signUp"><a href="#">Sign up</a></li>
+    <li id="signIn"> <a href="#">Giriş</a></li>
+    <li id="signUp"><a href="#">Kayıt</a></li>
   </ul>
   <div class="panel__wrap">
   
     <div id="signInBox" class="panel__box active">
 	<form method="post">
-      <label>Email
+      <label>E-posta
 	  	<input type="email"   name="email" placeholder="E-mail" required/> 
       </label>
-      <label>Password
+      <label>Şifre
 	  	<input type="password" class="giris" name="parola" placeholder="parola" required/> 
        </label>
       <input type="submit" name="giris" value="Giriş" id="btngiris"/>
@@ -52,16 +52,16 @@
     </div>
     <div id="signUpBox" class="panel__box">
     <form method="post">
-      <label>Email
+      <label>E-posta
         <input type="email" name="email" id="email" placeholder="E-mail" required />
       </label>
-    <label>No
+    <label>Okul numarası
         <input type="text" name="no" id="no" placeholder="No" required />
       </label>
-      <label>Password
+      <label>Şifre
         <input type="password" name="parola" id="parola" placeholder="Parola" required/>
       </label>
-      <label>Confirm password
+      <label>Şifre tekrarı
         <input type="password" name="parolaTekrar" id="parolaTekrar" placeholder="Parola tekrar" required />
       </label>
       <input type="submit" name="kaydol" value="Kaydol" id="btnKaydol" />

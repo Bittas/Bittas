@@ -15,8 +15,9 @@
             </span>
           </a>
           <ul class="treeview-menu">
-              <li><a href="index.php?sayfa=proje-danisman&tur=1"><i class="fa fa-user"></i> <span>Danışman</span></a></li>
-       <?php 
+              <li><a href="index.php?sayfa=proje-danismant"><i class="fa fa-user"></i> <span>Danışman</span></a></li>    
+
+	 <?php 
             if(ogrenciProjeAlmismi($ogrId,1)!=1) 
         echo '<li class="treeview  active">
               <a href="#">
@@ -33,9 +34,8 @@
                         <i class="fa fa-circle-o"></i> Grup Projeler   </a>    </li>
                 <li><a href="index.php?sayfa=basvurulan-projeleri&tur=1"><i class="fa fa-circle-o"></i>Başvurulan Projeleri Listele</a></li>
               </ul>
-            </li>
-            <li><a href="index.php?sayfa=rapor-islemleri&tur=1"><i class="fa  fa-files-o"></i> Rapor İşlemleri</a></li>';
-            else
+            </li>';
+            else if(ogrenciProjeAlmismi($ogrId,1)==1) 
             echo '<li><a href="index.php?sayfa=rapor-islemleri&tur=1"><i class="fa  fa-files-o"></i> Rapor İşlemleri</a></li>';
               ?>
           </ul>
@@ -50,7 +50,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-              <li><a href="index.php?sayfa=proje-danisman&tur=2"><i class="fa fa-user"></i> <span>Danışman</span></a></li>
+              <li><a href="index.php?sayfa=proje-danismanb"><i class="fa fa-user"></i> <span>Danışman</span></a></li>
           <?php 
           if(ogrenciProjeAlmismi($ogrId,2)!=1 && ogrenciProjeAlmismi($ogrId,3)!=1 && ogrenciProjeAlmismi($ogrId,1)==1)
          echo '<li class="treeview  active">
@@ -69,7 +69,7 @@
                 <li><a href="index.php?sayfa=basvurulan-projeleri&tur=2"><i class="fa fa-circle-o"></i>Başvurulan Projeleri Listele</a></li>
               </ul>
             </li>';
-            else
+            else if(ogrenciProjeAlmismi($ogrId,2)==1)
               echo '<li><a href="index.php?sayfa=rapor-islemleri&tur=2"><i class="fa  fa-files-o"></i> Rapor İşlemleri</a></li>';
               ?>
           </ul>

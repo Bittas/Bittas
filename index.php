@@ -21,7 +21,6 @@
   <script src="js/danismanbasvurulari.js"></script>
   <script src="js/jquery-3.1.1.min.js"></script>
   <link rel="stylesheet" href="css/uploadfilecss/component.css" />
-
   <script>(function(e,t,n){var r=e.querySelectorAll("html")[0];r.className=r.className.replace(/(^|\s)no-js(\s|$)/,"$1js$2")})(document,window,0);</script>
 </head>
 

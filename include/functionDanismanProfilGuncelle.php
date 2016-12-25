@@ -1,6 +1,6 @@
 <?php
 
-	function profilGuncelleOgrenci()
+	function profilGuncelleDanisman()
 	{
 		$id =$_SESSION["staj"]["id"];
 
@@ -8,16 +8,9 @@
 		$parola=temizle(@$_POST["parola"]);
 		$adi=temizle(@$_POST["ad"]);
 		$soyadi=temizle(@$_POST["soyad"]);
-		$cinsiyet=temizle(@$_POST["cinsiyet"]);
+		$tc=temizle(@$_POST["tc"]);
+		$unvan=temizle(@$_POST["unvan"]);
 		$uni=temizle(@$_POST["uni"]);
-		$fakulte=temizle(@$_POST["fakulte"]);
-		$bolum=temizle(@$_POST["bolum"]);
-		$sinif=temizle(@$_POST["sinif"]);
-		$okul_no=temizle(@$_POST["okul_no"]);
-		$il=temizle(@$_POST["il"]);
-		$ilce=temizle(@$_POST["ilce"]);
-		$adres=temizle(@$_POST["adres"]);
-		$akademisyen=temizle(@$_POST["akademisyen"]);
 		$hakkimda=temizle(@$_POST["hakkimda"]);
 
 		global $conn;
@@ -43,14 +36,13 @@
 			$query .=" , parola='$parola'";
 		}
 		$query .=" where id =$id ; ";
-		$query2="UPDATE tbl_ogrenci set numara='$okul_no' , cinsiyet=$cinsiyet , il=$il , ilce=$ilce , adres='$adres' , uni=$uni , fakulte=$fakulte , bolum=$bolum , sinif='$sinif' where user_id=$id";
-		
+		$query2="UPDATE tbl_danisman AS d SET tc='$tc', unvan='$unvan', uni_id=$uni WHERE user_id=$id";
 		if(mysqli_query($conn,$query) && mysqli_query($conn,$query2))
 		{
-			return $msg.successMesaj("Kayıt işlemi başarılı");
+			return successMesaj("Kayıt işlemi başarılı");
 		}else
 		{
-			return $msg.errorMesaj("Kayıt işlemi tamamlanamadı");
+			return errorMesaj("Kayıt işlemi tamamlanamadı");
 		}
 	}
 	

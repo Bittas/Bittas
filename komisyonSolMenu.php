@@ -34,7 +34,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="index.php?sayfa=proje-onerme"><i class="fa  fa-arrows-h"></i>Eşlemeler</a></li>
+            <li><a href="index.php?sayfa=eslesme&tur=tasarim"><i class="fa  fa-arrows-h"></i>Eşlemeler</a></li>
             <!--<li><a href="index.php?sayfa=bireysel-projeler"><i class="fa  fa-line-chart"></i>Proje Takip</a></li> -->
             <li class="active treeview">
 				<a href="index.php?sayfa=grup-projeler">
@@ -59,7 +59,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="index.php?sayfa=proje-onerme"><i class="fa fa-arrows-h"></i>Eşlemeler</a></li>
+            <li><a href="index.php?sayfa=eslesme&tur=bitirme"><i class="fa fa-arrows-h"></i>Eşlemeler</a></li>
            <!-- <li><a href="index.php?sayfa=bireysel-projeler"><i class="fa  fa-line-chart"></i>Proje Takip</a></li> -->
             <li class="active treeview">
 				<a href="index.php?sayfa=grup-projeler">

@@ -33,7 +33,7 @@ function ogrenciTumProjeBasvurulariniListele()
                     INNER JOIN
                       tbl_projedurum AS PD ON P.projedurum_id = PD.id
                     WHERE
-                      P.Turu = ".$projeTuru."
+                      P.Turu = ".$projeTuru." 
                     UNION
                      SELECT
                       P.id AS projeID,
@@ -53,7 +53,7 @@ function ogrenciTumProjeBasvurulariniListele()
                     INNER JOIN
                       tbl_projedurum AS PD ON P.projedurum_id = PD.id
                     WHERE
-                      P.Turu = ".$projeTuru."
+                      P.Turu = ".$projeTuru." 
                 ";
           $sonuc2 =mysqli_query($conn,$query2);
 	       while($sutun=mysqli_fetch_array($sonuc2)){

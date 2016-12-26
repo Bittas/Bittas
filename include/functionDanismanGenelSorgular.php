@@ -333,14 +333,14 @@ function ogrenci_proje_getir_turu($turu)
 		
 function turu($turu)
 {$durum="";
-	if($turu == 0)
-		$durum="tasarım projesi";
 	if($turu == 1)
-		$durum="bitirme projesi";
+		$durum="tasarım projesi";
 	if($turu == 2)
+		$durum="bitirme projesi";
+	if($turu == 3)
 		$durum="her ikiside";
 return $durum;	
-}		
+}	
 //////////////////////////////////////////////////////////////////////////////////
 
 

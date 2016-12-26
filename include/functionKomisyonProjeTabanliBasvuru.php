@@ -10,6 +10,7 @@
                       K.adi AS ogrenciAdi,
                       K.soyadi AS ogrenciSoyadi,
                       K.foto AS foto,
+                      K.rol AS rol,
                       O.numara AS numara,
                       O.id AS ogrenciId,
                       P.id AS projeId,
@@ -53,8 +54,8 @@
                           <td title="'.$sutun["ogrenciAdi"].'">'.$sutun["ogrenciAdi"].'</td>
                           <td title="'.$sutun["ogrenciSoyadi"].'">'.$sutun["ogrenciSoyadi"].'</td>
                           <td title="'.$sutun["projeTuru"].'">'.$sutun["projeTuru"].'</td>
-                          <td>---Onaylanmış---</td>
-                          <td><a href="index.php?sayfa=komisyon-proje-tabanli-detayli-gorunum&id='.$sutun["ogrenciId"].'&ogrenciAdi='.$sutun["ogrenciAdi"].'&foto='.$sutun["foto"].'&ogrenciSoyadi='.$sutun["ogrenciSoyadi"].'&numara='.$sutun["numara"].'&projeTuru='.$sutun["projeTuru"].'&projeTuruId='.$sutun["projeTuruId"].'" class="fa fa-search"/></td>
+                          <td><span class="label label-success ">Onaylanmış</span></td>
+                          <td><a href="index.php?sayfa=komisyon-proje-tabanli-detayli-gorunum&id='.$sutun["ogrenciId"].'&ogrenciAdi='.$sutun["ogrenciAdi"].'&foto='.$sutun["foto"].'&ogrenciSoyadi='.$sutun["ogrenciSoyadi"].'&numara='.$sutun["numara"].'&projeTuru='.$sutun["projeTuru"].'&projeTuruId='.$sutun["projeTuruId"].'&rol='.$sutun["rol"].'" class="fa fa-search"/></td>
                           </tr>  ';
                     }
                     else if(@mysqli_num_rows($sonuc) ==0){
@@ -65,8 +66,8 @@
                           <td title="'.$sutun["ogrenciAdi"].'">'.$sutun["ogrenciAdi"].'</td>
                           <td title="'.$sutun["ogrenciSoyadi"].'">'.$sutun["ogrenciSoyadi"].'</td>
                           <td title="'.$sutun["projeTuru"].'">'.$sutun["projeTuru"].'</td>
-                          <td>-Onaylanmamış-</td>
-                          <td><a href="index.php?sayfa=komisyon-proje-tabanli-detayli-gorunum&id='.$sutun["ogrenciId"].'&ogrenciAdi='.$sutun["ogrenciAdi"].'&foto='.$sutun["foto"].'&ogrenciSoyadi='.$sutun["ogrenciSoyadi"].'&numara='.$sutun["numara"].'&projeTuru='.$sutun["projeTuru"].'&projeTuruId='.$sutun["projeTuruId"].'" class="fa fa-search"/></td>
+                          <td><span class="label label-warning">Onaylanmamış</span></td>
+                          <td><a href="index.php?sayfa=komisyon-proje-tabanli-detayli-gorunum&id='.$sutun["ogrenciId"].'&ogrenciAdi='.$sutun["ogrenciAdi"].'&foto='.$sutun["foto"].'&ogrenciSoyadi='.$sutun["ogrenciSoyadi"].'&numara='.$sutun["numara"].'&projeTuru='.$sutun["projeTuru"].'&projeTuruId='.$sutun["projeTuruId"].'&rol='.$sutun["rol"].'" class="fa fa-search"/></td>
                           </tr>  ';
                     }
                 
@@ -76,6 +77,7 @@
    function commissionProjectBasedDetailedView()
    {
       $ogrId=$_GET["id"];
+      $rol=$_GET["rol"];
       $projeTuru=$_GET["projeTuru"];
       $projeTuruId=$_GET["projeTuruId"];
          global $conn;
@@ -90,9 +92,9 @@
               P.oneren_id AS onerenId,
               (SELECT adi FROM tbl_kullanici AS TK  INNER JOIN tbl_ogrenci AS O ON O.user_id=TK.id WHERE O.id= P.oneren_id
               UNION
-               SELECT adi FROM tbl_kullanici AS TK  INNER JOIN tbl_danisman AS D ON D.user_id=TK.id WHERE D.id= P.oneren_id
+               SELECT adi FROM tbl_kullanici AS TK  INNER JOIN tbl_danisman AS D ON D.user_id=TK.id WHERE D.id= P.oneren_id 
               ) AS onerenAdi,
-              (SELECT soyadi FROM tbl_kullanici AS TK  INNER JOIN tbl_ogrenci AS O ON O.user_id=TK.id WHERE O.id= P.oneren_id
+              (SELECT soyadi FROM tbl_kullanici AS TK  INNER JOIN tbl_ogrenci AS O ON O.user_id=TK.id WHERE O.id= P.oneren_id 
               UNION
                SELECT adi FROM tbl_kullanici AS TK  INNER JOIN tbl_danisman AS D ON D.user_id=TK.id WHERE D.id= P.oneren_id
               ) AS onerenSoyadi,
@@ -108,7 +110,7 @@
             INNER JOIN
               tbl_projeturu AS PT ON P.turu = PT.id
             WHERE
-              PT.id =".$projeTuruId." AND O.id=".$ogrId." ";
+              PT.id =".$projeTuruId." AND O.id=".$ogrId."    ";
           $sonuc =mysqli_query($conn,$query);
             $satir=0;
 	       while($sutun=mysqli_fetch_array($sonuc)){
@@ -184,7 +186,7 @@
                           <td title="'.$sutun["ogrenciAdi"].'">'.$sutun["ogrenciAdi"].'</td>
                           <td title="'.$sutun["ogrenciSoyadi"].'">'.$sutun["ogrenciSoyadi"].'</td>
                           <td title="'.$sutun["projeTuru"].'">'.$sutun["projeTuru"].'</td>
-                          <td>---Onaylanmış---</td>
+                          <td><span class="label label-success ">Onaylanmış</span></td>
                           <td><a href="index.php?sayfa=komisyon-proje-tabanli-detayli-gorunum&id='.$sutun["ogrenciId"].'&ogrenciAdi='.$sutun["ogrenciAdi"].'&foto='.$sutun["foto"].'&ogrenciSoyadi='.$sutun["ogrenciSoyadi"].'&numara='.$sutun["numara"].'&projeTuru='.$sutun["projeTuru"].'&projeTuruId='.$sutun["projeTuruId"].'" class="fa fa-search"/></td>
                           </tr>  ';
                     }
@@ -196,7 +198,7 @@
                           <td title="'.$sutun["ogrenciAdi"].'">'.$sutun["ogrenciAdi"].'</td>
                           <td title="'.$sutun["ogrenciSoyadi"].'">'.$sutun["ogrenciSoyadi"].'</td>
                           <td title="'.$sutun["projeTuru"].'">'.$sutun["projeTuru"].'</td>
-                          <td>-Onaylanmamış-</td>
+                          <td><span class="label label-warning">Onaylanmamış</span></td>
                           <td><a href="index.php?sayfa=komisyon-proje-tabanli-detayli-gorunum&id='.$sutun["ogrenciId"].'&ogrenciAdi='.$sutun["ogrenciAdi"].'&foto='.$sutun["foto"].'&ogrenciSoyadi='.$sutun["ogrenciSoyadi"].'&numara='.$sutun["numara"].'&projeTuru='.$sutun["projeTuru"].'&projeTuruId='.$sutun["projeTuruId"].'" class="fa fa-search"/></td>
                           </tr>  ';
                     }

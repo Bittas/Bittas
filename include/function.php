@@ -458,12 +458,19 @@ WHERE k.rol=1 AND k.onay=1";
 		}
 	}
 	function ogrenciOnaylanmısProjeGetir(){
+        if (isset($_GET["sayfa"])) {
+		   $tur=$_GET["sayfa"];
+		   if ($tur=="bitirme-projesi")
+		   	$tur=2;
+		   else if($tur=="tasarim-projesi")
+		   	$tur=1;
+        }
 		global $ogrId;
 		global $conn;
 		$sorgu="SELECT p.id,p.adi,p.konu,p.kisi_sayisi,p.danisman_sayisi,pd.durum FROM tbl_ogrenci_proje AS op 
 			INNER JOIN tbl_proje AS p ON p.id=op.proje_id
 			INNER JOIN tbl_projedurum AS pd ON pd.id=p.projedurum_id
-			WHERE op.onay=1 AND op.ogrenci_id=$ogrId AND p.turu=1";
+			WHERE op.onay=1 AND op.ogrenci_id=$ogrId AND p.turu=$tur";
 
 		$sonuc=mysqli_query($conn,$sorgu);
 		if ($sonuc) {

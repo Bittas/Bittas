@@ -22,9 +22,9 @@
             <div class="box-body table-responsive no-padding">
               <table class="table table-hover">
                 <tr>
-                  <th>ID</th>
                   <th>Öğrenci</th>
                   <th>Proje</th>
+                  <th>Son rapor tarihi</th>
                   <th>Kişi Sayısı</th>
                   <th>Danısman</th>
                   <th>Durum</th>
@@ -36,5 +36,6 @@
             </div>
             <!-- /.box-body -->
           </div>
+              <small style="color: brown;font-weight: bold;"><p>*raporları görüntülemek için 'öğrenci ismi'ne tıklayınız</p></small>
           <!-- /.box -->
           </div>

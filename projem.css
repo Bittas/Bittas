@@ -130,6 +130,13 @@ textarea{
 	
 	
 }
+.my_autocomplete:hover{
+	background-color:#3c8dbc;
+	color:white;
+}
+.my_autocomplete{
+	font-weight:bold;
+}
 
 
 

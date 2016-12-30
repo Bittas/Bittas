@@ -169,16 +169,28 @@ WHERE op.onay=1 AND p.turu=$tur";
    $sonuc=mysqli_query($conn,$sorgu);
    if ($sonuc) {
       while ($row=mysqli_fetch_array($sonuc)) {
+$sorgu2="SELECT pr.date FROM tbl_rapor AS pr
+WHERE pr.proje_id=".$row["pId"]." AND pr.org_id=".$row["ogID"]."
+ORDER BY pr.id DESC";
+
+   $sonuc2=mysqli_query($conn,$sorgu2);
+   if ($sonuc2) {
+      $row2_length=mysqli_num_rows($sonuc2);
+      if ($row2_length>0) {
+      $row2=mysqli_fetch_array($sonuc2);
          echo '
                 <tr>
                   <td><a href="index.php?sayfa=danisman-raporlar-detay&projeID='.$row["pId"].'&ogrenciID='.$row["ogID"].'">'.$row["adi"].' '.$row["soyadi"].'</a></td>
                   <td>'.$row["pAdi"].'</td>
-                  <td>'.$row["pId"].'</td>
+                  <td>'.$row2["date"].'</td>
                   <td><span class="label label-danger">'.$row["kisi_sayisi"].'</span></td>
                   <td><span class="label label-warning">'.$row["danisman_sayisi"].'</span></td>
                   <td><span class="label label-success">'.$row["durum"].'</span></td>
                 </tr>
                 ';
+      }
+   }
+      else return "sorgu2 hatalı";
       }
    }
    else

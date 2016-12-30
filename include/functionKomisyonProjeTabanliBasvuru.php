@@ -143,8 +143,9 @@
                       K.adi AS ogrenciAdi,
                       K.soyadi AS ogrenciSoyadi,
                       K.foto AS foto,
+                      K.rol AS rol,
                       O.numara AS numara,
-                      K.id AS ogrenciId,
+                      O.id AS ogrenciId,
                       P.id AS projeId,
                       PT.id AS projeTuruId,
                       PT.tur AS projeTuru
@@ -187,7 +188,7 @@
                           <td title="'.$sutun["ogrenciSoyadi"].'">'.$sutun["ogrenciSoyadi"].'</td>
                           <td title="'.$sutun["projeTuru"].'">'.$sutun["projeTuru"].'</td>
                           <td><span class="label label-success ">Onaylanmış</span></td>
-                          <td><a href="index.php?sayfa=komisyon-proje-tabanli-detayli-gorunum&id='.$sutun["ogrenciId"].'&ogrenciAdi='.$sutun["ogrenciAdi"].'&foto='.$sutun["foto"].'&ogrenciSoyadi='.$sutun["ogrenciSoyadi"].'&numara='.$sutun["numara"].'&projeTuru='.$sutun["projeTuru"].'&projeTuruId='.$sutun["projeTuruId"].'" class="fa fa-search"/></td>
+                          <td><a href="index.php?sayfa=komisyon-proje-tabanli-detayli-gorunum&id='.$sutun["ogrenciId"].'&ogrenciAdi='.$sutun["ogrenciAdi"].'&foto='.$sutun["foto"].'&ogrenciSoyadi='.$sutun["ogrenciSoyadi"].'&numara='.$sutun["numara"].'&projeTuru='.$sutun["projeTuru"].'&projeTuruId='.$sutun["projeTuruId"].'&rol='.$sutun["rol"].'" class="fa fa-search"/></td>
                           </tr>  ';
                     }
                     else if(@mysqli_num_rows($sonuc) ==0){
@@ -199,7 +200,7 @@
                           <td title="'.$sutun["ogrenciSoyadi"].'">'.$sutun["ogrenciSoyadi"].'</td>
                           <td title="'.$sutun["projeTuru"].'">'.$sutun["projeTuru"].'</td>
                           <td><span class="label label-warning">Onaylanmamış</span></td>
-                          <td><a href="index.php?sayfa=komisyon-proje-tabanli-detayli-gorunum&id='.$sutun["ogrenciId"].'&ogrenciAdi='.$sutun["ogrenciAdi"].'&foto='.$sutun["foto"].'&ogrenciSoyadi='.$sutun["ogrenciSoyadi"].'&numara='.$sutun["numara"].'&projeTuru='.$sutun["projeTuru"].'&projeTuruId='.$sutun["projeTuruId"].'" class="fa fa-search"/></td>
+                          <td><a href="index.php?sayfa=komisyon-proje-tabanli-detayli-gorunum&id='.$sutun["ogrenciId"].'&ogrenciAdi='.$sutun["ogrenciAdi"].'&foto='.$sutun["foto"].'&ogrenciSoyadi='.$sutun["ogrenciSoyadi"].'&numara='.$sutun["numara"].'&projeTuru='.$sutun["projeTuru"].'&projeTuruId='.$sutun["projeTuruId"].'&rol='.$sutun["rol"].'" class="fa fa-search"/></td>
                           </tr>  ';
                     }
                 

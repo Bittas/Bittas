@@ -1,6 +1,4 @@
-<h2>TASARIM PROJESİ</h2>
-
-
+<div class="col-xs-12">
           <div class="box">
             <div class="box-header">
               <h3 class="box-title">TASARIM PROJESİ</h3>
@@ -30,4 +28,10 @@
             </div>
             <!-- /.box-body -->
           </div>
+              <small style="color: brown;font-weight: bold;"><p>*danışmanları görmek için imleci "danışman sayısı"" üzerine getiriniz</p>
+              <p>*grubunuzdaki kişileri görmek için imleci "öğrenci sayısı"" üzerine getiriniz</p></small>
           <!-- /.box -->
+</div>
+          <script type="text/javascript">
+            $("[data-toggle=popover]").popover();
+          </script>

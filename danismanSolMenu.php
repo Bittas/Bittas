@@ -80,9 +80,15 @@
             <span class="pull-right-container"></span>
           </a>
         </li>
-       <li>
-          <a href="index.php?sayfa=ogrenci-kayit-onay">
-            <i class="fa fa-newspaper-o"></i> <span>Öğrenci Kayıt Onayı</span>
-            <span class="pull-right-container"></span>
+    <li class="treeview">
+      <a href="#">
+            <i class="fa fa-cogs"></i><span>Öğrenci Kayıt İşlemleri</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
           </a>
+          <ul class="treeview-menu">
+            <li><a href="index.php?sayfa=ogrenci-kayit-onay"><i class="fa fa-plus"></i>Öğrenci Kaydı Onay</a></li>
+            <li><a href="index.php?sayfa=ogrenci-kayit-iptal"><i class="fa fa-times"></i>Öğrenci Kaydı İptal</a></li>
+          </ul>
         </li>

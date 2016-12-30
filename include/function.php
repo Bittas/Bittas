@@ -116,6 +116,9 @@ require_once("include/functionDanismanGenelSorgular.php");
 		else if ($sayfa=="ogrenci-kayit-onay") {
 			require_once("danismanOgrenciKayitOnay.php");
 		}
+		else if ($sayfa=="ogrenci-kayit-iptal") {
+			require_once("danismanOgrenciKayitIptal.php");
+		}
 		else if ($sayfa=="danisman-profil-duzenle") {
 			require_once("danismanProfilDuzenle.php");
 		}
@@ -395,8 +398,7 @@ WHERE og.onay=1 AND op.onay=1 AND p.turu=$tur";
 			echo "sorgu hatalı";
 
 	}
-	
-	function danismanOgrenciKayitListele(){
+	function danismanOgrenciKayitOnayBekleyen(){
 		global $conn;
 		$sorgu="SELECT k.id AS kID, o.numara AS oNo, k.mail AS oEmail FROM tbl_kullanici AS k
 INNER JOIN tbl_ogrenci AS o ON o.user_id=k.id
@@ -408,7 +410,28 @@ WHERE k.rol=1 AND k.onay=0";
                 <tr data-cost='.$satir["kID"].'>
                   <td>'.$satir["oNo"].'</td>
                   <td>'.$satir["oEmail"].'</td>
-                  <td><input type="checkbox" class="pasif"  id="'.$satir["kID"].'" onchange="OgrKayitOnayla(this);"                
+                  <td><input type="checkbox" class="pasif" id="'.$satir["kID"].'" onchange="OgrKayitOnay(this);"                
+                   value="'.$satir["kID"].'"></td>
+                </tr>
+				';
+			}
+		}
+		else
+			echo "sorgu hatalı";
+	}
+	function danismanOgrenciKayitOnaylılar(){
+		global $conn;
+		$sorgu="SELECT k.id AS kID, o.numara AS oNo, k.mail AS oEmail FROM tbl_kullanici AS k
+INNER JOIN tbl_ogrenci AS o ON o.user_id=k.id
+WHERE k.rol=1 AND k.onay=1";
+		$sonuc=mysqli_query($conn,$sorgu);
+		if ($sonuc) {
+			while($satir=mysqli_fetch_array($sonuc)){
+				echo '
+                <tr data-cost='.$satir["kID"].'>
+                  <td>'.$satir["oNo"].'</td>
+                  <td>'.$satir["oEmail"].'</td>
+                  <td><input type="checkbox" class="pasif" checked id="'.$satir["kID"].'" onchange="OgrKayitIptal(this);"                
                    value="'.$satir["kID"].'"></td>
                 </tr>
 				';
@@ -477,8 +500,8 @@ WHERE k.rol=1 AND k.onay=0";
                   <td>'.$satir["adi"].'</td>
                   <td>'.$satir["konu"].'</td>';
                   echo '
-                  <td><span data-toggle="tooltip" data-placement="top" title="'.$isimler_o_str.'">'.$satir["kisi_sayisi"].'</span></td>
-                  <td><span data-toggle="tooltip" data-placement="top" title="'.$isimler_d_str.'">'.$satir["danisman_sayisi"].'</span></td>';
+                  <td><span class="label label-success" data-toggle="tooltip" data-placement="top" title="'.$isimler_o_str.'">'.$satir["kisi_sayisi"].'</span></td>
+                  <td><span class="label label-success" data-toggle="tooltip" data-placement="top" title="'.$isimler_d_str.'">'.$satir["danisman_sayisi"].'</span></td>';
                   if ($satir["durum"]=="Aktif")
                   	echo '<td><span class="label label-success">'.$satir["durum"].'</span></td></tr>';
                   else

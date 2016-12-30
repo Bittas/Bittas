@@ -22,7 +22,7 @@
                   <th>E-Posta</th>
                   <th>Onay</th>
                 </tr>
-                <?php danismanOgrenciKayitOnayBekleyen(); ?>
+                <?php danismanOgrenciKayitOnaylılar(); ?>
               </table>
             </div>
             <!-- /.box-body -->
@@ -31,9 +31,9 @@
 
 
       <script type="text/javascript">
-      function  OgrKayitOnay(element){
+      function  OgrKayitIptal(element){
 // store the values from the form checkbox box, then send via ajax below
-var pasifYap = $(element).is(':checked') ? 1 : 0;
+var pasifYap = $(element).is(':checked') ? 0 : 0;
 var id = $(element).attr('id');
     
     $.ajax({

@@ -8,7 +8,6 @@ if(@$_POST["sil"]){
 	
 }
 if (@$_POST["profilduzenle"]) {
-	echo "içerdeyim";
   profilGuncelleOgrenci();
 }
 	$id =$_SESSION["staj"]["id"];
